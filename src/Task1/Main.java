@@ -24,7 +24,7 @@ public class Main {
         integers.stream().
                 distinct().
                 filter(x -> x%2 == 0).
-               collect(Collectors.summingInt(Integer::intValue));
+              reduce((a,e) -> a+e).get();
         System.out.println(c);
     }
 }
